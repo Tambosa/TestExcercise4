@@ -1,5 +1,7 @@
 package com.aroman.testexcercise4.ui.classesFragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -58,9 +60,18 @@ class ClassesFragment : Fragment() {
     }
 
     private fun openZoom(zoomLink: Any) {
-        //nothing
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("zoomus://${zoomLink}"))
+        try {
+            startActivity(intent)
+        } catch (e: Exception) {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=us.zoom.videomeetings")
+                )
+            )
+        }
     }
-
 
     private fun loadData() {
         viewModel.loadClasses()

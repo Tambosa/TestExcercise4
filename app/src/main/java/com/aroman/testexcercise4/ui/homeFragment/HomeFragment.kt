@@ -1,15 +1,18 @@
 package com.aroman.testexcercise4.ui.homeFragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.aroman.testexcercise4.databinding.FragmentHomeBinding
 import com.aroman.testexcercise4.data.FakeSchoolRepoImpl
+import com.aroman.testexcercise4.databinding.FragmentHomeBinding
 import com.aroman.testexcercise4.ui.homeFragment.recyclers.ClassesAdapter
 import com.aroman.testexcercise4.ui.homeFragment.recyclers.HomeworkAdapter
+
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -51,7 +54,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun openZoom(zoomLink: String) {
-        //nothing
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("zoomus://${zoomLink}"))
+        try {
+            startActivity(intent)
+        } catch (e: Exception) {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://play.google.com/store/apps/details?id=us.zoom.videomeetings")
+                )
+            )
+        }
     }
 
     private fun initHomeworkRecycler() {
