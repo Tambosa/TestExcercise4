@@ -2,7 +2,7 @@ package com.aroman.testexcercise4.ui.homeFragment.recyclers
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.aroman.testexcercise4.ui.domain.entities.ClassE
+import com.aroman.testexcercise4.domain.entities.ClassE
 
 class ClassesAdapter(private val onItemClick: (position: Int) -> Unit) :
     RecyclerView.Adapter<ClassesViewHolder>() {

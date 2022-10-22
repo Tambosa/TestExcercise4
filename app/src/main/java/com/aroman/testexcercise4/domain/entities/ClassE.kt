@@ -1,4 +1,4 @@
-package com.aroman.testexcercise4.ui.domain.entities
+package com.aroman.testexcercise4.domain.entities
 
 data class ClassE(
     val className: String,

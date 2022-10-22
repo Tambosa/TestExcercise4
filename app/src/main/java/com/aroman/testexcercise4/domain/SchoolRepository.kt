@@ -1,7 +1,7 @@
-package com.aroman.testexcercise4.ui.domain
+package com.aroman.testexcercise4.domain
 
-import com.aroman.testexcercise4.ui.domain.entities.ClassE
-import com.aroman.testexcercise4.ui.domain.entities.HomeworkE
+import com.aroman.testexcercise4.domain.entities.ClassE
+import com.aroman.testexcercise4.domain.entities.HomeworkE
 
 interface SchoolRepository {
     suspend fun loadTodaysClasses(): List<ClassE>

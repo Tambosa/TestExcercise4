@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aroman.testexcercise4.databinding.RecyclerItemClassesBinding
-import com.aroman.testexcercise4.ui.domain.entities.ClassE
+import com.aroman.testexcercise4.domain.entities.ClassE
 
 class ClassesViewHolder(
     private val binding: RecyclerItemClassesBinding,

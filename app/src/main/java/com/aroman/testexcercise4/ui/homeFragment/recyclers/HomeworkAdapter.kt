@@ -2,7 +2,7 @@ package com.aroman.testexcercise4.ui.homeFragment.recyclers
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.aroman.testexcercise4.ui.domain.entities.HomeworkE
+import com.aroman.testexcercise4.domain.entities.HomeworkE
 
 class HomeworkAdapter : RecyclerView.Adapter<HomeworkViewHolder>() {
     private var data: List<HomeworkE> = emptyList()

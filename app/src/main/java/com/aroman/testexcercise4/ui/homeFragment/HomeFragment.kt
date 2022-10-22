@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aroman.testexcercise4.databinding.FragmentHomeBinding
-import com.aroman.testexcercise4.ui.data.FakeSchoolRepoImpl
+import com.aroman.testexcercise4.data.FakeSchoolRepoImpl
 import com.aroman.testexcercise4.ui.homeFragment.recyclers.ClassesAdapter
 import com.aroman.testexcercise4.ui.homeFragment.recyclers.HomeworkAdapter
 

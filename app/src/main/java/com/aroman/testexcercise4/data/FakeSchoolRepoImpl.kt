@@ -1,8 +1,8 @@
-package com.aroman.testexcercise4.ui.data
+package com.aroman.testexcercise4.data
 
-import com.aroman.testexcercise4.ui.domain.SchoolRepository
-import com.aroman.testexcercise4.ui.domain.entities.ClassE
-import com.aroman.testexcercise4.ui.domain.entities.HomeworkE
+import com.aroman.testexcercise4.domain.SchoolRepository
+import com.aroman.testexcercise4.domain.entities.ClassE
+import com.aroman.testexcercise4.domain.entities.HomeworkE
 
 class FakeSchoolRepoImpl: SchoolRepository {
     override suspend fun loadTodaysClasses(): List<ClassE> {

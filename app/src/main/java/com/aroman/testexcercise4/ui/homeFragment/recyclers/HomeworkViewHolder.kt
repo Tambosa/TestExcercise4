@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aroman.testexcercise4.databinding.RecyclerItemHomeworkBinding
-import com.aroman.testexcercise4.ui.domain.entities.HomeworkE
+import com.aroman.testexcercise4.domain.entities.HomeworkE
 
 class HomeworkViewHolder(private val binding: RecyclerItemHomeworkBinding) :
     RecyclerView.ViewHolder(binding.root) {

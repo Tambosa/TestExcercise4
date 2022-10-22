@@ -3,9 +3,9 @@ package com.aroman.testexcercise4.ui.homeFragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aroman.testexcercise4.ui.domain.SchoolRepository
-import com.aroman.testexcercise4.ui.domain.entities.ClassE
-import com.aroman.testexcercise4.ui.domain.entities.HomeworkE
+import com.aroman.testexcercise4.domain.SchoolRepository
+import com.aroman.testexcercise4.domain.entities.ClassE
+import com.aroman.testexcercise4.domain.entities.HomeworkE
 import kotlinx.coroutines.*
 
 class HomeViewModel(private val repo: SchoolRepository) : ViewModel() {
