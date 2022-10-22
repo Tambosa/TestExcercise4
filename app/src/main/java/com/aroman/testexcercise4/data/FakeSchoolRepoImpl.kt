@@ -8,7 +8,7 @@ import com.aroman.testexcercise4.domain.entities.HomeworkE
 class FakeSchoolRepoImpl : SchoolRepository {
     override suspend fun loadTodaysClasses(): List<ClassE> {
         return listOf(
-            ClassE("History", "9:00 - 9:45", true, ""),
+            ClassE("History", "09:00 - 9:45", true, ""),
             ClassE("Math", "10:00 - 10:45", false, ""),
             ClassE("Biology", "12:00 - 12:45", false, ""),
             ClassE("Russian", "13:00 - 13:45", false, ""),
@@ -20,8 +20,15 @@ class FakeSchoolRepoImpl : SchoolRepository {
             ExtraClassE(
                 "Physical Education",
                 "11:00 - 11:45",
+                "Mr. Barros",
                 "Intensive Preparation for the Junior World Championship in Los Angelos",
-            )
+            ),
+            ExtraClassE(
+                "Maths",
+                "12:20 - 12:35",
+                "Mrs. Barros",
+                "Sign Up for Math Competition",
+            ),
         )
     }
 

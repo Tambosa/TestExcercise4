@@ -1,7 +1,8 @@
 package com.aroman.testexcercise4.domain.entities
 
 data class ExtraClassE(
-    private val className: String,
-    private val teacherName: String,
-    private val description: String,
-    )
+    val className: String,
+    override val classTime: String,
+    val teacherName: String,
+    val description: String,
+) : SchoolClass
