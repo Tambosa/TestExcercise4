@@ -4,5 +4,6 @@ data class ClassE(
     val className: String,
     val classTime: String,
     val zoomIsActive: Boolean,
-    val zoomLink: String
+    val zoomLink: String,
+    val teacherName: String = ""
 )
