@@ -1,4 +1,4 @@
-package com.aroman.testexcercise4
+package com.aroman.testexcercise4.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
