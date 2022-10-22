@@ -7,4 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#354355</color>
+    <color name="colorPrimaryDark">#26303D</color>
+    <color name="colorPrimaryDark40">#4026303D</color>
+    <color name="colorAccent">#F3CD70</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorTextPrimary">#FFFFFF</color>
+
+    <color name="tab_disable">#979797</color>
+    <color name="tab_enable">#FFFFFF</color>
+    <color name="tab_checked">#F3CD70</color>
+    <color name="tab_unchecked">#FFFFFF</color>
+    <color name="next_exam_card_color_end">#2ABBC1</color>
+    <color name="next_exam_card_color_start">#86FF8C</color>
 </resources>
