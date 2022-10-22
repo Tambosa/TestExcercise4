@@ -43,17 +43,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.pager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
                 when (position) {
-                    0 -> {
-                        binding.bottomNavigation.menu.getItem(0).isChecked = true
-                        binding.bottomNavigation.menu.getItem(1).isChecked = false
-                    }
-                    1 -> {
-                        binding.bottomNavigation.menu.getItem(0).isChecked = false
-                        binding.bottomNavigation.menu.getItem(1).isChecked = true
-                    }
+                    0 -> binding.bottomNavigation.selectedItemId = R.id.action_home
+                    1 -> binding.bottomNavigation.selectedItemId = R.id.action_classes
                 }
+                super.onPageSelected(position)
             }
         })
     }
