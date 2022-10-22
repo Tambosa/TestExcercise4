@@ -7,19 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aroman.testexcercise4.databinding.FragmentHomeBinding
-import com.aroman.testexcercise4.ui.domain.entities.ClassE
-import com.aroman.testexcercise4.ui.domain.entities.HomeworkE
+import com.aroman.testexcercise4.ui.data.FakeSchoolRepoImpl
 import com.aroman.testexcercise4.ui.homeFragment.recyclers.ClassesAdapter
 import com.aroman.testexcercise4.ui.homeFragment.recyclers.HomeworkAdapter
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: HomeViewModel = HomeViewModel(FakeSchoolRepoImpl())
+    private val homeworkAdapter = HomeworkAdapter()
     private val classesAdapter = ClassesAdapter { position ->
         onItemClick(position)
     }
-
-    private val homeworkAdapter = HomeworkAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,24 +34,8 @@ class HomeFragment : Fragment() {
 
         initClassesRecycler()
         initHomeworkRecycler()
-        homeworkAdapter.setData(
-            listOf(
-                HomeworkE(
-                    "Literature",
-                    "2 days",
-                    "Read scenes 1.1 - 1.42 of The Master and Margarita"
-                ),
-                HomeworkE("Math", "5 days", "Solve equations 12.1 - 12.5"),
-            )
-        )
-        classesAdapter.setData(
-            listOf(
-                ClassE("History", "9:00 - 9:45", true, ""),
-                ClassE("Math", "10:00 - 10:45", false, ""),
-                ClassE("Russian", "11:00 - 11:45", false, ""),
-                ClassE("Biology", "12:00 - 12:45", false, ""),
-            )
-        )
+        initViewModel()
+        loadData()
     }
 
     private fun initClassesRecycler() {
@@ -76,6 +60,24 @@ class HomeFragment : Fragment() {
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = homeworkAdapter
         }
+    }
+
+    private fun initViewModel() {
+        viewModel.classesList.observe(viewLifecycleOwner) {
+            classesAdapter.setData(it)
+        }
+        viewModel.homeworkList.observe(viewLifecycleOwner) {
+            homeworkAdapter.setData(it)
+        }
+        viewModel.examDate.observe(viewLifecycleOwner) {
+            binding.cardTimerTextView.text = it
+        }
+    }
+
+    private fun loadData() {
+        viewModel.loadClasses()
+        viewModel.loadHomework()
+        viewModel.loadExamDate()
     }
 
     override fun onDestroy() {
