@@ -14,6 +14,13 @@ class ClassesAdapter(private val onItemClick: (position: Int) -> Unit) :
         notifyDataSetChanged()
     }
 
+    fun findFirstActiveClass(): Int {
+        for (classE in data) {
+            if (classE.zoomIsActive) return data.indexOf(classE)
+        }
+        return 0
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ClassesViewHolder.create(parent, onItemClick)
 

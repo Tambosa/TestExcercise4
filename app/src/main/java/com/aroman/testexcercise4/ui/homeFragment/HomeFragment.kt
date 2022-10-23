@@ -78,6 +78,7 @@ class HomeFragment : Fragment() {
     private fun initViewModel() {
         viewModel.classesList.observe(viewLifecycleOwner) {
             classesAdapter.setData(it)
+            binding.classesRecycler.scrollToPosition(classesAdapter.findFirstActiveClass())
         }
         viewModel.homeworkList.observe(viewLifecycleOwner) {
             homeworkAdapter.setData(it)
